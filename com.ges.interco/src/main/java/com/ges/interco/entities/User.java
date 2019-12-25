@@ -21,6 +21,19 @@ public class User implements Serializable {
 	@OneToMany(mappedBy = "user")
 	private List<Role> roles;
 	
+	
+	public User(Long id, String firstName, String lastName, String userName, String password, List<Role> roles) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.userName = userName;
+		this.password = password;
+		this.roles = roles;
+	}
+	public User() {
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -58,17 +71,13 @@ public class User implements Serializable {
 	public void setRoles(List<Role> roles) {
 		this.roles = roles;
 	}
-	public User(Long id, String firstName, String lastName, String userName, String password, List<Role> roles) {
-		super();
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.userName = userName;
-		this.password = password;
-		this.roles = roles;
+	
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", userName=" + userName
+				+ ", password=" + password + ", roles=" + roles + "]";
 	}
-	public User() {
-	}
+	
 	
 	
 }
