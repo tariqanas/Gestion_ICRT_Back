@@ -15,6 +15,7 @@ import com.ges.interco.entities.User;
 public class Application {
 
 	
+	//DATA FOR MY DB ;
 	
 	public static void main(String[] args) {
 		
