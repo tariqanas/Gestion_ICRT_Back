@@ -1,0 +1,31 @@
+package com.ges.interco.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
+
+@Entity
+public class Domaine  implements Serializable {
+	
+	
+	
+	public static void main(String[] args ) {
+		
+		int x = 12000, y=10000;
+		
+		int sum = x+y;
+		 
+		String pattern;
+		DecimalFormat  decimal = new DecimalFormat("");
+		decimal.setGroupingUsed(true);
+		decimal.setGroupingSize(3);
+
+		String output = decimal.format(sum);
+		
+		System.out.println(output);
+	}
+
+}

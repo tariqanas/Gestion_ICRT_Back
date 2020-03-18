@@ -2,14 +2,14 @@ package com.ges.interco.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 
-
+/**
+ * Classe Employee : Classe qui représente le consultant.
+ * @author Alpha
+ *
+ */
 @Entity
 public class Employee  implements Serializable {
 	
@@ -20,13 +20,25 @@ public class Employee  implements Serializable {
 	private String lastName;
 	private Long age;
 	@ManyToOne
+	@JoinColumn(name = "client_id")
 	private Client client;
 	@ManyToOne
+	@JoinColumn(name = "domaine_id")
 	private Domaine domaine;
 	private Long anciennete;
 	private String niveau;
 	private String nationalité;
 	private Double score;
+	private String photoIdentity;
+	
+	
+	
+	public String getPhotoIdentity() {
+		return photoIdentity;
+	}
+	public void setPhotoIdentity(String photoIdentity) {
+		this.photoIdentity = photoIdentity;
+	}
 	public Long getId() {
 		return id;
 	}

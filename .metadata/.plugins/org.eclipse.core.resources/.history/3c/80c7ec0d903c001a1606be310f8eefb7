@@ -1,0 +1,5 @@
+package com.ges.interco.entities;
+
+public class Client {
+
+}

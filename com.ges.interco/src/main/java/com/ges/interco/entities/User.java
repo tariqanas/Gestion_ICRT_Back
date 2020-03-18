@@ -11,8 +11,13 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+/**
+ * Classe qui représente : l'utilisateur de l'application.
+ * @author Alpha
+ *
+ */
 @Entity
-@Data @NoArgsConstructor @AllArgsConstructor
 public class User implements Serializable {
 
 	@Id

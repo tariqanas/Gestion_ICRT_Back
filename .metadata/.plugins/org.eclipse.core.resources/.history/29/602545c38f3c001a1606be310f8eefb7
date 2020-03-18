@@ -1,0 +1,24 @@
+package com.ges.interco.entities;
+
+import java.io.Serializable;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Data @NoArgsConstructor @AllArgsConstructor 
+public class Employee  implements Serializable {
+	
+	private Long id;
+	private String firstName;
+	private String lastName;
+	private Long age;
+	private Client client;
+	private Domaine domaine;
+	private Long anciennete;
+	private String niveau;
+	private String nationalité;
+	private Double score;
+
+}

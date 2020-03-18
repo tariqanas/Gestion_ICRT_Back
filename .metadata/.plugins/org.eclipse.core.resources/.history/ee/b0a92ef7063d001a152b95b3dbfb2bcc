@@ -1,0 +1,69 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+
+
+class Terson {
+		
+		String prenom;
+		List<Long> num;
+		Long age;
+		
+		List<Long> getNumbers() {
+			return this.num;
+		}
+		
+		Terson() {
+			
+		}
+		Terson(String a , List<Long> num,Long age) {
+			this.prenom = a ;
+			this.num = num;
+			this.age = age;
+		}
+		
+		String getName() {
+			return this.prenom;
+		}
+		
+		Long getAge() {
+			return this.age;
+		}
+	
+		public static void main(String[] args ) {
+			
+		
+			Terson a = new Terson("Hamza", Arrays.asList(1L,2L,3L),45L);
+			Terson b = new Terson("Anas",  Arrays.asList(1L,2L,3L),42L);
+			Terson c = new Terson("Youssra",  Arrays.asList(1L,2L,3L),22L);
+			
+			List<Terson> t = new ArrayList();
+			t.add(a);
+			t.add(b);
+			t.add(c);
+			
+
+			//Sort + compare.
+			
+			/*
+			t.stream().
+			map(x -> x.getNumbers().stream().map(y -> y*2)
+			.collect(Collectors.toList())).forEach(x -> {
+			System.out.println(x);
+			});
+			*/
+			
+			t.stream().filter(x -> x.age > 20).
+					sorted(Comparator.comparing(Terson::getName).reversed().
+					thenComparing(Terson::getAge)).forEach(x -> System.out.println(x.getName()));
+			
+			
+			
+			
+			// Afficher une liste  filtré par un age > 20 ordonnée par le nom , et si on les noms sont égaux , classer par age;
+		
+	}
+}

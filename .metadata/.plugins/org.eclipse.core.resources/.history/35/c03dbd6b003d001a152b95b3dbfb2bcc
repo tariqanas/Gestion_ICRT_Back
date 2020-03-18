@@ -1,0 +1,61 @@
+package com.ges.interco.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Collection;
+
+
+@Entity
+public class Domaine  implements Serializable {
+	
+	@Id
+	@GeneratedValue
+	private Long id;
+	private String intitule;
+	@OneToMany
+	private Collection<Employee> consultant;
+	
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getIntitule() {
+		return intitule;
+	}
+	public void setIntitule(String intitule) {
+		this.intitule = intitule;
+	}
+	public Collection<Employee> getConsultant() {
+		return consultant;
+	}
+	public void setConsultant(Collection<Employee> consultant) {
+		this.consultant = consultant;
+	}
+	@Override
+	public String toString() {
+		return "Domaine [id=" + id + ", intitule=" + intitule + ", consultant=" + consultant + "]";
+	}
+	public Domaine(Long id, String intitule, Collection<Employee> consultant) {
+		super();
+		this.id = id;
+		this.intitule = intitule;
+		this.consultant = consultant;
+	}
+	public Domaine() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+ 
+
+}

@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+
+
+class Terson {
+		
+		String prenom;
+		List<Long> num;
+		
+		List<Long> getNumbers() {
+			return this.num;
+		}
+		
+		Terson() {
+			
+		}
+		Terson(String a , List<Long> num) {
+			this.prenom = a ;
+			this.num = num;
+		}
+		
+	
+		public static void main(String[] args ) {
+			
+		
+			Terson a = new Terson("Hamza", Arrays.asList(1L,2L,3L));
+			Terson b = new Terson("Anas",  Arrays.asList(1L,2L,3L));
+			
+			List<Terson> t = new ArrayList();
+			t.add(a);
+			t.add(b);
+			
+
+
+			t.stream().map(x -> Arrays.asList(x.getNumbers().))
+		}
+	}

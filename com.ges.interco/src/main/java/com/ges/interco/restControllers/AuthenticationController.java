@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ges.interco.dao.UsersRepository;
+import com.ges.interco.daoSecurity.UsersRepository;
 import com.ges.interco.entities.User;
 
 @CrossOrigin(origins = "*")

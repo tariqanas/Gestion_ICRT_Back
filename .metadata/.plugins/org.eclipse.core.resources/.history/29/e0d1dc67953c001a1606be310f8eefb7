@@ -1,0 +1,23 @@
+package com.ges.interco.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+
+
+@Entity
+public class Domaine  implements Serializable {
+	
+	
+	
+	public static void main(String[] args ) {
+		
+		int x = 12000, y=10000;
+		
+		int sum = x+y;
+		 
+		String output = String.valueOf(sum);
+		 
+	}
+
+}

@@ -3,13 +3,18 @@ package com.ges.interco.entities;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+
+/**
+ * Classe Role : Represente le role de l'utilisateur : [ADMIN | USER ].
+ * @author Alpha
+ *
+ */
 @Entity
 public class Role implements Serializable {
 	

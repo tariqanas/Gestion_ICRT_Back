@@ -1,0 +1,37 @@
+package com.ges.interco.entities;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Collection;
+
+
+@Entity
+public class Domaine  implements Serializable {
+	
+	private Long id;
+	private String intitule;
+	private Collection<Employee> consultant;
+	
+	
+	public static void main(String[] args ) {
+		
+		int x = 120510, y=130450;
+		
+		int sum = x+y;
+		 
+		DecimalFormat format = new DecimalFormat();
+		DecimalFormatSymbols symbol = new DecimalFormatSymbols();
+		symbol.setGroupingSeparator(',');
+		format.setDecimalFormatSymbols(symbol);
+		System.out.println(format.format(sum));
+		
+
+		 
+	
+	}
+
+}

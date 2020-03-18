@@ -9,12 +9,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-
+/**
+ * Classe Client : Le client du consultant.
+ * @author Alpha
+ *
+ */
 @Entity
 public class Client implements Serializable {
 	
@@ -22,9 +22,6 @@ public class Client implements Serializable {
 	@GeneratedValue
 	private Long id;
 	private String name;
-	
-	@OneToMany(mappedBy = "client",fetch = FetchType.LAZY)
-	private Collection<Employee> consultants;
 	private String das;
 	
 	public Long getId() {
@@ -39,12 +36,6 @@ public class Client implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Collection<Employee> getConsultants() {
-		return consultants;
-	}
-	public void setConsultants(Collection<Employee> consultants) {
-		this.consultants = consultants;
-	}
 	public String getDas() {
 		return das;
 	}
@@ -54,17 +45,13 @@ public class Client implements Serializable {
 	public Client(String name, Collection<Employee> consultants, String das) {
 		super();
 		this.name = name;
-		this.consultants = consultants;
 		this.das = das;
 	}
 	public Client() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	@Override
-	public String toString() {
-		return "Client [id=" + id + ", name=" + name + ", consultants=" + consultants + ", das=" + das + "]";
-	}
+
 
 	
 	
